@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const fileupload = require('express-fileupload');
 
+const apiRouter = require('./src/routes/routes')
+
 mongoose.set('strictQuery', false);
 mongoose.connect(process.env.DATABASE, {
      // useFindAndModify: false,        Não é suportado
@@ -24,9 +26,7 @@ server.use(fileupload());
 
 server.use(express.static(__dirname+'/publlic'));
 
-server.get('/ping', (req, res) => {
-     res.json({pong: true});
-});
+server.use('/', apiRouter);
 
 server.listen(process.env.PORT, () =>{
      console.log('- Rodando no endereço: '+process.env.BASE)
