@@ -15,7 +15,7 @@ module.exports = {
                token = req.body.token
           }
 
-          if (token === '') {
+          if (token === "") {
                res.json({notallowed: true});
                return;
           } 

@@ -24,7 +24,7 @@ server.use(express.json());
 server.use(express.urlencoded({extended: true}));
 server.use(fileupload());
 
-server.use(express.static(__dirname+'/publlic'));
+server.use(express.static(__dirname+'/public'));
 
 server.use('/', apiRouter);
 
