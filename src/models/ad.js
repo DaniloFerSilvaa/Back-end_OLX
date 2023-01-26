@@ -11,7 +11,7 @@ const modelSchema = new mongoose.Schema({
      price: Number,
      priceNegotiable: Boolean,
      description: String,
-     viewes: Number,
+     views: Number,
      status: String
 });
 
